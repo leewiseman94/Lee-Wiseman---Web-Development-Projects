@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+<!-- Site Content -->
+<div class="site-content">
+    
+    <!-- Header with page title and nav menu -->
+    <div class="header">
+        <div class="page-title-container">
+            <div class="page-title">
+                <h1>Lee Wiseman</h1>
+            </div>
+            <div class="page-tagline">
+                <h5>Web Development Projects</h5>
+            </div>
+        </div>
+            
+        <div class="header-nav-container">
+            <ul class="header-nav" id="my-headernav" style="list-style-type:none;">
+                <li><a class="nav-menu-item" id="active" href="index.html">Home</a></li>
+                <li id="dropdownId" class="dropdown"><a class="nav-menu-item" id="JavaScriptMenuItem" href="#">JavaScript  <i class="fa fa-caret-down"></i></a>
+					<div id="JavaScriptDropdown" class="dropdown-content">
+					<a href="Project1.html">Project 1</a>
+					<a href="#">Project 2</a>
+					<a href="#">Project 3</a>
+					<a href="#">Project 4</a>
+				  </div>
+				</li>
+				<li id="dropdownId" class="dropdown"><a class="nav-menu-item" id="ReactMenuItem" href="#">React JS  <i class="fa fa-caret-down"></i></a>
+					<div id="ReactDropdown" class="dropdown-content">
+					<a href="Project1.html">Project 1</a>
+					<a href="#">Project 2</a>
+					<a href="#">Project 3</a>
+					<a href="#">Project 4</a>
+				  </div>
+				</li>
+                <li id="dropdownId" class="dropdown"><a class="nav-menu-item" id="CMenuItem" href="#">C#  <i class="fa fa-caret-down"></i></a>
+					<div id="CDropdown" class="dropdown-content">
+					<a href="Project1.html">Project 1</a>
+					<a href="#">Project 2</a>
+					<a href="#">Project 3</a>
+					<a href="#">Project 4</a>
+				  </div>
+				</li>
+				<li id="dropdownId" class="dropdown"><a class="nav-menu-item" id="PythonMenuItem" href="#">Python  <i class="fa fa-caret-down"></i></a>
+					<div id="PythonDropdown" class="dropdown-content">
+					<a href="Project1.html">Project 1</a>
+					<a href="#">Project 2</a>
+					<a href="#">Project 3</a>
+					<a href="#">Project 4</a>
+				  </div>
+				</li>
+                <li><a href="javascript:void(0);" class="icon" onclick="myFunction(); changeIcon(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                  </a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="main-content">
+
+
+
+
+
+    </div>
+  
+  <script language="javascript" type="text/javascript">
+  function myFunction() {
+    var x = document.getElementById("my-headernav");
+    if (x.className === "header-nav") {
+      x.className += " responsive";
+    } else {
+      x.className = "header-nav";
+    }
+	
+  }
+
+  function changeIcon(x) {
+	  x.classList.toggle("change");
+	}
+
+
+	var dropdown = document.getElementsByClassName("nav-menu-item");
+	
+	var i;
+	
+	for (i = 0; i < dropdown.length; i++) {
+				
+		dropdown[i].addEventListener("click", function() {
+		
+		var otherDropdownContent = this.id;
+		
+		for (index = 0; index < dropdown.length; index++) {
+
+			
+
+			if(dropdown[index].id !== otherDropdownContent && dropdown[index].id !== "active"){
+				var div = dropdown[index].id;
+				document.getElementById(div).nextElementSibling.style.display = "none";	
+			
+			}
+			
+		}
+
+		var dropdownContent = this.nextElementSibling;
+
+		if (dropdownContent.style.display === "block") {
+			dropdownContent.style.display = "none";
+		} else {
+			dropdownContent.style.display = "block";
+		};
+
+	});
+
+
+	}	
+			
+		
+	
+
+  </script>
+  
+
+</body>
+</html>
